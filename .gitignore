@@ -2,3 +2,4 @@
 .project
 *.log
 *.customed.sh
+geckodriver.log

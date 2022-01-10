@@ -41,13 +41,16 @@ def input_select(driver, tag_for, text):
             (By.CSS_SELECTOR, 'label[for="' + tag_for + '"]')
         )
     ).find_element(By.XPATH, '..')
+    driver.execute_script("arguments[0].scrollIntoView();", element)
     element.find_element(By.TAG_NAME, 'input').click()
     wait_for_animation(driver)
-    WebDriverWait(element, 10).until(
+    element = WebDriverWait(element, 10).until(
         EC.element_to_be_clickable(
             (By.XPATH, '//li/span[text()="' + text + '"]')
         )
-    ).click()
+    )
+    driver.execute_script("arguments[0].scrollIntoView();", element)
+    element.click()
     wait_for_animation(driver)
 
 
@@ -57,6 +60,7 @@ def input_text(driver, tag_for, tag_name, text):
             (By.CSS_SELECTOR, 'label[for="' + tag_for + '"]')
         )
     ).find_element(By.XPATH, '..').find_element(By.TAG_NAME, tag_name)
+    driver.execute_script("arguments[0].scrollIntoView();", input_element)
     input_element.click()
     wait_for_animation(driver)
     input_element.clear()
@@ -76,6 +80,7 @@ def input_select_radio(driver, tag_for, text):
             (By.CSS_SELECTOR, 'label[for="' + tag_for + '"]')
         )
     ).find_element(By.XPATH, '..')
+    driver.execute_script("arguments[0].scrollIntoView();", element)
     wait_for_animation(driver)
     WebDriverWait(element, 10).until(
         EC.element_to_be_clickable(
@@ -126,11 +131,7 @@ def submit(driver):
     print('Submit successfully')
 
 
-if __name__ == '__main__':
-    print('PKUAutoSubmit by ybh1998, use at your own risk!')
-    options = webdriver.firefox.options.Options()
-    options.headless = True
-    driver = webdriver.Firefox(options=options)
+def run(driver):
     driver.get('''https://iaaa.pku.edu.cn/iaaa/oauth.jsp?appID=portal2017&appNam
 e=%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%E6%A0%A1%E5%86%85%E4%BF%A1%E6%81%AF%E9%97
 %A8%E6%88%B7%E6%96%B0%E7%89%88&redirectUrl=https%3A%2F%2Fportal.pku.edu.cn%2Fpor
@@ -179,5 +180,16 @@ tal2017%2FssoLogin.do''')
     ).click()
     wait_for_animation(driver)
     submit(driver)
+
+
+if __name__ == '__main__':
+    print('PKUAutoSubmit by ybh1998, use at your own risk!')
+    options = webdriver.firefox.options.Options()
+    options.headless = True
+    driver = webdriver.Firefox(options=options)
+    try:
+        run(driver)
+    except Exception as e:
+        print(e)
     time.sleep(3)
     driver.quit()
