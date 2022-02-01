@@ -15,4 +15,8 @@ violating freedom of movement arbitrary under the will of the school governor.
 PKUAutoSubmit is open source software licensed under the terms of the GNU Affero
 General Public License v3.0 or any later version.
 
-Tested on 01/09/2022 with Firefox 95.0.2.
+Commit 2ab36521fe13ec8b70e6b9600fffb9e35ed2f920
+    Tested on 01/09/2022 with Firefox 95.0.2.
+
+Commit 82832c4cc0601a6e178c41e4448200f62a007d2f
+    Tested on 02/01/2022 with Firefox 96.0.3 and Chrome 97.0.4692.99.
