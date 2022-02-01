@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export DRIVER="firefox"                 # firefox or chrome
+export HEADLESS="False"                 # "True" for running on headless server
 export USERNAME="xxxxxxxxxx"            # your student ID
 export PASSWORD="xxxxxxxxxx"            # your password
 export SZXQ="xxxxxxxxxx"                # 所在校区

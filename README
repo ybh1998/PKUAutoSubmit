@@ -1,8 +1,12 @@
 Yet another PKUAutoSubmit!
 
+Use simso.sh for https://simso.pku.edu.cn/, and ssop.sh for
+https://ssop.pku.edu.cn. Modify the environment virables before running the
+script.
+
 Using this software indicates that you understand and accept the EULA on 
-https://simso.pku.edu.cn/. The author is not responsible for the consequences of
-use of this software. Use at your own risk!
+https://simso.pku.edu.cn/ and https://ssop.pku.edu.cn. The author is not
+responsible for the consequences of use of this software. Use at your own risk!
 
 Strongly condemn Peking University for human rights violations, including
 coerce submitting sensitive information, leaking sensitive information, and
